@@ -9,7 +9,7 @@ Ceci est une application pour la recherche des fimls
 git clone https://github.com/Stanislas-Web/cloneallocine.git
 
 # aller dans le répertoire de l'application
-$ cd my-project/back-office
+$ cd my-project/cloneallocine
 
 # installer les dépendances de l'application 
 $ npm install 
@@ -19,6 +19,7 @@ $ npm run start
 ```
 Par default l'application utilise le port 3000.
 ## ** Lien de l'application hébergée
+https://themovies.vercel.app/
 
 
 ## **Tech Stack**
