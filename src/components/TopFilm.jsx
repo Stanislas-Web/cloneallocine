@@ -16,7 +16,7 @@ const DivContainer = styled.div`
 `;
 const ContainerStyle = styled.main`
     background-color: #1A212F;
-    margin-top: -150px;
+    margin-top: -100px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     text-align: center;

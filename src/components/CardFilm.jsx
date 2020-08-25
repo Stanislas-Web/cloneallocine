@@ -4,14 +4,23 @@ import { getImageFromApi } from '../Api/TMBAPI';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
+
 const Card = styled.div`
     display: flex;
     flex-direction: column;
     width: 200px;
     background: #2E3752;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+    &:hover{
+        border: 0.5px solid #2E3752;
+        background: #1A212F;
+        width: 198px;
+        cursor: pointer;
+
+    }
     @media (max-width: 625px) {
         flex-direction: row;
         width: 100%;
@@ -37,7 +46,7 @@ const CardChild = styled.div`
 `;
 const ImgStyle = styled.img`
     width: 100%;
-    height: 200px;
+    height: 300px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     @media (max-width: 625px) {
@@ -69,12 +78,14 @@ const CardFilm = (props) => {
     const defaultImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwR31HeEDfrHDKRqOyKahOhSeSml9iTQLQFg&usqp=CAU";
 
     const film = props.film
-    return <Link to='/detail/'><Card onClick={()=>{ localStorage.setItem("id", JSON.stringify(film.id))}}>
-
-                <ImgStyle src={ film.poster_path === null? defaultImg :getImageFromApi(film.poster_path)} />    
+    return <Link to={`/detail/${film.id}`}>
+            <Card>
+                 
+                <ImgStyle src={ film.poster_path === null? defaultImg :getImageFromApi(film.poster_path)} />   
                 <CardChild>
                     <PStyle>{film.title.length > 40 ? film.title.substring(0,40) : film.title}</PStyle> 
                 </CardChild>
+            
             </Card>
             </Link>
 }

@@ -15,7 +15,6 @@ const ImgStyle = styled.img`
 const NotFound = () => {
     return ( 
         <NotFoundStyle>
-            {/* <h1>Not Found</h1> */}
             <ImgStyle src={imgNotFound} alt=""/>
         </NotFoundStyle>
      );
